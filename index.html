@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Figi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="grid">
+      <main class="products-section">
+        <h1>Products</h1>
+        <div id="products-grid" class="products-grid">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </main>
+      
+      <aside class="cart-section">
+        <div class="cart">
+          <h2>Your Cart (<span id="cart-count">0</span>)</h2>
+          <div id="cart-items" class="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+          </div>
+          <div id="cart-summary" class="cart-summary hidden">
+            <div class="cart-total">
+              <span>Order Total</span>
+              <span id="cart-total">$0.00</span>
+            </div>
+            <div class="eco-delivery">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L21.5 6.5v11L12 22L2.5 17.5v-11L12 2z"/>
+                <path d="M12 22V12"/>
+                <path d="M21.5 6.5L12 12l-9.5-5.5"/>
+              </svg>
+              <span>This is a carbon-neutral delivery</span>
+            </div>
+            <button class="confirm-order">Confirm Order</button>
+          </div>
+          <p id="empty-cart" class="empty-cart">Your cart is empty</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <template id="product-template">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="" alt="">
+      </div>
+      <div class="product-info">
+        <h3 class="product-title"></h3>
+        <div class="product-rating">
+          <div class="rating-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span class="rating-value"></span>
+          </div>
+          <span class="rating-count"></span>
+        </div>
+        <p class="product-price"></p>
+      </div>
+      <div class="product-actions">
+        <button class="add-to-cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1"/>
+            <circle cx="19" cy="21" r="1"/>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+          </svg>
+        </button>
+        <div class="quantity-controls hidden">
+          <button class="decrease">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+          <span class="quantity">1</span>
+          <button class="increase">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="cart-item-template">
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <img src="" alt="">
+        <div>
+          <h3></h3>
+          <p class="cart-item-price"></p>
+        </div>
+      </div>
+      <button class="remove-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
